@@ -1,0 +1,39 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50505
+Source Host           : localhost:3306
+Source Database       : weather
+
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
+
+Date: 2017-08-27 16:36:03
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for weather
+-- ----------------------------
+DROP TABLE IF EXISTS `weather`;
+CREATE TABLE `weather` (
+  `id` varchar(100) NOT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `code_d` varchar(100) DEFAULT NULL,
+  `code_n` varchar(100) DEFAULT NULL,
+  `txt_d` varchar(100) DEFAULT NULL,
+  `txt_n` varchar(100) DEFAULT NULL,
+  `max` varchar(100) DEFAULT NULL,
+  `min` varchar(100) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of weather
+-- ----------------------------
+INSERT INTO `weather` VALUES ('1', 'hz', '100', '104', '晴', '阴', '37', '25', '2017-08-27');
+INSERT INTO `weather` VALUES ('2', 'sz', '100', '104', '晴', '阴', '37', '25', '2017-08-27');
