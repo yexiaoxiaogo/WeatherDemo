@@ -44,7 +44,6 @@ public class HelloController {
 		weather.setCode_d("test");
 		weather.setCode_n("test");
 		weather.setMax("100");
-		weather.setId("100");
 		
 		// 通过 service 插入数据
 		weatherService.insertWeather(weather);

@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Weather {
 	
-	private String id; //城市ID CN101010100
+	private int id; //数据ID
 	private String city; //城市名称
 	private String code_d;//白天天气状况代码  100
 	private String code_n;//夜间天气状况代码  104
@@ -14,10 +14,10 @@ public class Weather {
 	private String min;//最低气温
 	private Date date;//预报日期
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getCity() {
@@ -68,5 +68,5 @@ public class Weather {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
+	
 }
