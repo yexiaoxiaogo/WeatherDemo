@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-08-28 15:13:49
+Date: 2017-08-28 17:36:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,9 +28,9 @@ CREATE TABLE `weather` (
   `txt_n` varchar(100) DEFAULT NULL,
   `max` varchar(100) DEFAULT NULL,
   `min` varchar(100) DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `date` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of weather
@@ -39,4 +39,7 @@ INSERT INTO `weather` VALUES ('1', 'hz', '100', '104', '晴', '阴', '37', '25',
 INSERT INTO `weather` VALUES ('2', 'hz', '100', '104', '晴', '阴', '37', '20', '2017-08-26');
 INSERT INTO `weather` VALUES ('3', 'hz', '100', '100', '晴', '晴', '39', '20', '2017-08-25');
 INSERT INTO `weather` VALUES ('4', 'hz', '100', '100', '晴22222', '晴666', '39', '20', '2017-08-25');
-INSERT INTO `weather` VALUES ('100', '杭州', 'test', 'test', null, null, '100', null, null);
+INSERT INTO `weather` VALUES ('102', '杭州', null, null, null, null, null, null, null);
+INSERT INTO `weather` VALUES ('103', '杭州', '100', '100', '晴', '晴', null, null, null);
+INSERT INTO `weather` VALUES ('104', '杭州', '100', '100', '晴', '晴', '37', '27', null);
+INSERT INTO `weather` VALUES ('105', '杭州', '100', '100', '晴', '晴', '37', '27', '2017-08-28');

@@ -1,5 +1,6 @@
 package io.github.yexiaoxiaogo.weather.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import io.github.yexiaoxiaogo.weather.impl.WeatherServiceImpl;
 import io.github.yexiaoxiaogo.weather.service.WeatherService;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 @RestController
@@ -37,18 +39,28 @@ public class HelloController {
 		// 解析成 JSON 对象，方便获取数据
 		JSONObject data = JSON.parseObject(response);
 		JSONObject basic = data.getJSONArray("HeWeather5").getJSONObject(0).getJSONObject("basic");
+		JSONArray daily_forecast = data.getJSONArray("HeWeather5").getJSONObject(0).getJSONArray("daily_forecast"); 
+		// daily_forecast 是一个array对象，不是object		
+		JSONObject cond = daily_forecast.getJSONObject(0).getJSONObject("cond");
+		JSONObject tmp = daily_forecast.getJSONObject(0).getJSONObject("tmp");
+	//	JSONObject A = daily_forecast.getJSONObject(0);
 		
 		// 构建一个weather 对象
 		Weather weather = new Weather();
 		weather.setCity((String) basic.get("city"));
-		weather.setCode_d("test");
-		weather.setCode_n("test");
-		weather.setMax("100");
+		weather.setCode_d((String)cond.get("code_d"));
+		weather.setCode_n((String)cond.get("code_n"));
+		weather.setTxt_d((String)cond.get("txt_d"));
+		weather.setTxt_n((String)cond.get("txt_n"));
+		weather.setMax((String)tmp.get("max"));
+		weather.setMin((String)tmp.get("min"));
+		weather.setDate((String)daily_forecast.getJSONObject(0).get("date"));
+		
 		
 		// 通过 service 插入数据
 		weatherService.insertWeather(weather);
 		
 		// 返回接口结果
-		return "插入成功，再次调用的话，需要再数据库中删除id 是100 的数据";
+		return "查询杭州天气，并插入数据库成功.可以访问“http://localhost:8080/weather/list/city?city=杭州”查看历史记录";
 	}
 }

@@ -12,7 +12,7 @@ public class Weather {
 	private String txt_n;//夜间天气状况描述  阴
 	private String max;//最高气温
 	private String min;//最低气温
-	private Date date;//预报日期
+	private String date;//预报日期
 	
 	public int getId() {
 		return id;
@@ -62,10 +62,10 @@ public class Weather {
 	public void setMin(String min) {
 		this.min = min;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
