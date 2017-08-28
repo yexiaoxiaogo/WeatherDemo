@@ -13,7 +13,7 @@
 		<result column="date" property="date" />
 	</resultMap>
 
-	<parameterMap id="City"
+	<parameterMap id="Weather"
 		type="io.github.yexiaoxiaogo.weather.domain.Weather" />
 
 	<sql id="Base_Column_List">
@@ -35,7 +35,7 @@
 	</select>
 
 	<!--  <insert id="insertWeather" parameterType="io.github.yexiaoxiaogo.weather.domain.Weather"> -->
-	<insert id="insertWeather" parameterMap="City">
+	<insert id="insertWeather" parameterMap="Weather">
 		insert into weather(id,city,code_d,code_n,txt_d,txt_n,max,min,date)
 		values(#{id},#{city},#{code_d},#{code_n},#{txt_d},#{txt_n},#{max},#{min},#{date})
 	</insert>
