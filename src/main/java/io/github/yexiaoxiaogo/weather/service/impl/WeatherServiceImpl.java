@@ -1,4 +1,4 @@
-package io.github.yexiaoxiaogo.weather.impl;
+package io.github.yexiaoxiaogo.weather.service.impl;
 
 import java.util.List;
 
