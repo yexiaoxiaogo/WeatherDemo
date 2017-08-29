@@ -1,17 +1,12 @@
 package io.github.yexiaoxiaogo.weather.controller;
 
-import java.sql.Date;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
-import io.github.yexiaoxiaogo.weather.dao.WeatherDao;
 import io.github.yexiaoxiaogo.weather.domain.Weather;
-import io.github.yexiaoxiaogo.weather.impl.WeatherServiceImpl;
 import io.github.yexiaoxiaogo.weather.service.WeatherService;
 
 import com.alibaba.fastjson.JSON;
