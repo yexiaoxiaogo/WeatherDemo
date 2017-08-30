@@ -25,15 +25,15 @@ public class WeatherController{
 	
 	@Autowired
 	private WeatherService weatherService;
-	
+	//根据cityname查询天气信息
 	@RequestMapping(value = "/weather/city",method = RequestMethod.GET)
-	public Weather findOneWeather(@RequestParam(value="city",required = true)String city){
-		return weatherService.findWeatherByName(city);
+	public Weather findOneWeather(@RequestParam(value="cityname",required = true)String cityname){
+		return weatherService.findWeatherByName(cityname);
 	}
-	
+	//根据cityname查询天气信息列表
 	@RequestMapping("/weather/list/city")
-	public List<Weather> findListWeather(@RequestParam(value="city",required = true)String city){
-		return weatherService.findWeatherListByName(city);
+	public List<Weather> findListWeather(@RequestParam(value="cityname",required = true)String cityname){
+		return weatherService.findWeatherListByName(cityname);
 	}
 	
 	@RequestMapping(value ="/weather/insert",method=RequestMethod.POST)

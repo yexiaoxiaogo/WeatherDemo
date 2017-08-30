@@ -18,15 +18,15 @@ public class WeatherServiceImpl implements WeatherService{
 	@Autowired
 	private WeatherDao weatherDao;
 	
-	public Weather findWeatherByName(String city) {
-		return weatherDao.findByName(city);
+	public Weather findWeatherByName(String cityname) {
+		return weatherDao.findByName(cityname);
 		
 	}
 
 	@Override
-	public List<Weather> findWeatherListByName(String city) {
+	public List<Weather> findWeatherListByName(String cityname) {
 		// TODO Auto-generated method stub
-		return weatherDao.findListByName(city);
+		return weatherDao.findListByName(cityname);
 	}
 
 	@Override

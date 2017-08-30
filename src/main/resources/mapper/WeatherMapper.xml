@@ -2,8 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="io.github.yexiaoxiaogo.weather.dao.WeatherDao">
 	<resultMap id="BaseResultMap" type="io.github.yexiaoxiaogo.weather.domain.Weather">
+		<result column="cityid" property="cityid" />
+		<result column="cityname" property="cityname" />
 		<result column="id" property="id" />
-		<result column="city" property="city" />
+		<result column="citycode" property="citycode" />
 		<result column="code_d" property="code_d" />
 		<result column="code_n" property="code_n" />
 		<result column="txt_d" property="txt_d" />
@@ -17,27 +19,27 @@
 		type="io.github.yexiaoxiaogo.weather.domain.Weather" />
 
 	<sql id="Base_Column_List">
-		id,city,code_d,code_n,txt_d,txt_n,max,min,date
+		id,citycode,code_d,code_n,txt_d,txt_n,max,min,date
 	</sql>
 
 	<select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
 		select
-		<include refid="Base_Column_List" />
-		from weather
-		where city = #{city}
+		*
+		from weather,city
+		where citycode = #{citycode} 
 	</select>
 
 	<select id="findListByName" resultMap="BaseResultMap" parameterType="java.lang.String">
 		select
-		*
-		from weather
-		where city = #{city}
+		cityname,txt_d,txt_n,max,min,date
+		from weather,city
+		where cityid=citycode 
 	</select>
 
 	<!--  <insert id="insertWeather" parameterType="io.github.yexiaoxiaogo.weather.domain.Weather"> -->
 	<insert id="insertWeather" parameterMap="Weather">
-		insert into weather(id,city,code_d,code_n,txt_d,txt_n,max,min,date)
-		values(#{id},#{city},#{code_d},#{code_n},#{txt_d},#{txt_n},#{max},#{min},#{date})
+		insert into weather(id,citycode,code_d,code_n,txt_d,txt_n,max,min,date)
+		values(#{id},#{citycode},#{code_d},#{code_n},#{txt_d},#{txt_n},#{max},#{min},#{date})
 	</insert>
 
 </mapper>

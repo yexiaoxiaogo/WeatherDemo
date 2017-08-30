@@ -18,7 +18,7 @@
 		</tr>
 		<#list weatherlist as weather>
 			<tr>
-				<td> ${weather.city} </td>
+				<td> ${city.cityname} </td>
 				<td> ${weather.txt_d} </td>
 				<td> ${weather.txt_n} </td>
 				<td> ${weather.max} </td>

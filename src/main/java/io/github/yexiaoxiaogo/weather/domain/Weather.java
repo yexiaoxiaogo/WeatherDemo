@@ -1,11 +1,9 @@
 package io.github.yexiaoxiaogo.weather.domain;
 
-import java.sql.Date;
-
 public class Weather {
 	
 	private int id; //数据ID
-	private String city; //城市名称
+	private String citycode; //城市代码
 	private String code_d;//白天天气状况代码  100
 	private String code_n;//夜间天气状况代码  104
 	private String txt_d;//白天天气状况描述  晴
@@ -20,11 +18,11 @@ public class Weather {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCity() {
-		return city;
+	public String getCitycode() {
+		return citycode;
 	}
-	public void setCity(String city) {
-		this.city = city;
+	public void setCitycode(String citycode) {
+		this.citycode = citycode;
 	}
 	public String getCode_d() {
 		return code_d;
@@ -68,5 +66,5 @@ public class Weather {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
+
 }

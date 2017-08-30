@@ -8,9 +8,9 @@ import io.github.yexiaoxiaogo.weather.domain.Weather;
  */
 public interface WeatherService {
 	//根据城市名称city查询天气信息
-	Weather findWeatherByName(String city);
+	Weather findWeatherByName(String cityname);
 	//根据city查询天气信息列表
-	List<Weather> findWeatherListByName(String city);
+	List<Weather> findWeatherListByName(String cityname);
 	//插入一条天气信息
 	Long insertWeather(Weather weather);
 	

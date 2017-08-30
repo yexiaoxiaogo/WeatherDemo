@@ -42,7 +42,7 @@ public class HelloController {
 		
 		// 构建一个weather 对象
 		Weather weather = new Weather();
-		weather.setCity((String) basic.get("city"));
+		weather.setCitycode((String) basic.get("id"));
 		weather.setCode_d((String)cond.get("code_d"));
 		weather.setCode_n((String)cond.get("code_n"));
 		weather.setTxt_d((String)cond.get("txt_d"));
@@ -56,6 +56,6 @@ public class HelloController {
 		weatherService.insertWeather(weather);
 		
 		// 返回接口结果
-		return "查询杭州天气，并插入数据库成功.可以访问“http://localhost:8080/weather/list/city?city=杭州”查看历史记录";
+		return "查询杭州天气，并插入数据库成功.可以访问“http://localhost:8080”查看历史记录";
 	}
 }
