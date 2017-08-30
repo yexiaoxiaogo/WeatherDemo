@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.github.yexiaoxiaogo.weather.dao.WeatherCityDao">
+	<resultMap id="BaseResultMap"
+		type="io.github.yexiaoxiaogo.weather.domain.WeatherCity">
+		<result column="id" property="id" />
+		
+		<result column="code_d" property="code_d" />
+		<result column="code_n" property="code_n" />
+		<result column="txt_d" property="txt_d" />
+		<result column="txt_n" property="txt_n" />
+		<result column="max" property="max" />
+		<result column="min" property="min" />
+		<result column="date" property="date" />
+		<association property="city" javaType="io.github.yexiaoxiaogo.weather.domain.City">
+			<result column="cityid" property="cityid" />
+			<result column="cityname" property="cityname" />
+		</association>
+	</resultMap>
+
+	<select id="selectAll" resultMap="BaseResultMap">
+		SELECT * from weather, city where weather.citycode = city.cityid
+	</select>
+
+</mapper>
