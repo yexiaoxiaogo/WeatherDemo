@@ -19,15 +19,12 @@ public class WebController {
     
 	@Autowired
 	private WeatherService weatherService;
-	private CityService cityService;
-	
 	@Autowired
 	private WeatherCityDao weatherCityDao;
 	
 	@RequestMapping("/")
 	public String index(ModelMap map){
 		map.addAttribute("weatherlist",weatherService.findWeatherListByName("杭州"));
-		map.addAttribute("city",cityService.findCityNameByCityId("CN101210101"));
 		return "index";
 	}
 	
