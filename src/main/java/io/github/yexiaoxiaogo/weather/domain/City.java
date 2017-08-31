@@ -16,6 +16,11 @@ public class City {
 	public void setCityname(String cityname) {
 		this.cityname = cityname;
 	}
-
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "cityid:" + this.cityid + " cityname:" + this.cityname;
+	}
 
 }
