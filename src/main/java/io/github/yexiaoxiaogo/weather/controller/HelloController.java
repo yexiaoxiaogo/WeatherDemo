@@ -21,6 +21,12 @@ public class HelloController {
 	@Autowired
 	private WeatherService weatherService;
 	
+	@RequestMapping("/index")
+	private String index() {
+		// TODO Auto-generated method stub
+		return "首页";
+	}
+	
 	@RequestMapping("/hello")
 	public String hello() {
 		
@@ -56,6 +62,6 @@ public class HelloController {
 		weatherService.insertWeather(weather);
 		
 		// 返回接口结果
-		return "查询杭州天气，并插入数据库成功.可以访问“http://localhost:8080”查看历史记录";
+		return "查询杭州天气，并插入数据库成功.可以访问“http://localhost:8080/test”查看历史记录";
 	}
 }

@@ -1,6 +1,8 @@
 package io.github.yexiaoxiaogo.weather.domain;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
 	
 	private int id; //数据ID
 	private String citycode; //城市代码

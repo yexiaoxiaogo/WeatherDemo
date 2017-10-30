@@ -1,6 +1,8 @@
 package io.github.yexiaoxiaogo.weather.domain;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable {
 
 	private String cityid;
 	private String cityname;
