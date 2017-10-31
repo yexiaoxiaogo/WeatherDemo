@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.github.kevinsawicki.http.HttpRequest;
@@ -16,12 +17,9 @@ import com.github.kevinsawicki.http.HttpRequest;
 @MapperScan("io.github.yexiaoxiaogo.weather.dao")
 public class App 
 {
-	public static void main(String[] args) throws Exception {
-		
+	public static void main(String[] args)  {
+	
 		SpringApplication.run(App.class, args);
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				new String[] { "META-INF/spring/provider.xml" });
-	
-	
+
     }
 }

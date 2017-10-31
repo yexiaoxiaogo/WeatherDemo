@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
+import io.github.yexiaoxiaogo.weather.App;
 import io.github.yexiaoxiaogo.weather.domain.Weather;
 import io.github.yexiaoxiaogo.weather.service.WeatherService;
 
@@ -23,6 +24,8 @@ public class HelloController {
 	
 	@RequestMapping("/index")
 	private String index() {
+
+	
 		// TODO Auto-generated method stub
 		return "首页";
 	}

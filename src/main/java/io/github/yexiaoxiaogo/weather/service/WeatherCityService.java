@@ -7,4 +7,5 @@ import io.github.yexiaoxiaogo.weather.domain.WeatherCity;
 public interface WeatherCityService {
 
 	List<WeatherCity> selectAll();
+	String test(String name);
 }
