@@ -16,11 +16,12 @@ import com.github.kevinsawicki.http.HttpRequest;
 @MapperScan("io.github.yexiaoxiaogo.weather.dao")
 public class App 
 {
-    public static void main( String[] args ) throws BeansException
-    {
-//    	 ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/spring/dubbo-demo-provider.xml"});
-//         context.start();
-         
-        SpringApplication.run(App.class, args);
+	public static void main(String[] args) throws Exception {
+		
+		SpringApplication.run(App.class, args);
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				new String[] { "META-INF/spring/provider.xml" });
+	
+	
     }
 }
