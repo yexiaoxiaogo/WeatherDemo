@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import io.github.yexiaoxiaogo.weather.dao.WeatherCityDao;
 import io.github.yexiaoxiaogo.weather.domain.WeatherCity;
+import io.github.yexiaoxiaogo.weather.service.WeatherCityService;
 import io.github.yexiaoxiaogo.weather.service.WeatherService;
 
 @Controller
@@ -17,7 +18,7 @@ public class WebController {
 	@Autowired
 	private WeatherService weatherService;
 	@Autowired
-	private WeatherCityDao weatherCityDao;
+	private WeatherCityService weatherCityService;
 	
 	@RequestMapping("/")
 	public String index(ModelMap map){
@@ -27,7 +28,7 @@ public class WebController {
 	
 	@RequestMapping("/test")
 	public String test(ModelMap map) {
-		List<WeatherCity> citys = weatherCityDao.selectAll();
+		List<WeatherCity> citys = weatherCityService.selectAll();
 		map.addAttribute("weatherlist", citys);
 		return "test";
 	}

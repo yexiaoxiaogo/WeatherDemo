@@ -11,11 +11,11 @@
 	<!-- 用dubbo协议在20880 -->
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="io.github.yexiaoxiaogo.weather.service.WeatherService"
-		ref="WeatherService" />
+	<dubbo:service interface="io.github.yexiaoxiaogo.weather.service.WeatherCityService"
+		ref="WeatherCityService" />
 
 	<!-- 具体服务接口的实现 -->
-	<bean id="WeatherService"
+	<bean id="WeatherCityService"
 		class="io.github.yexiaoxiaogo.weather.service.impl.WeatherServiceImpl" />
 
 </beans>
